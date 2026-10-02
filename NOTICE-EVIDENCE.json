@@ -1,0 +1,802 @@
+{
+  "audit_generator_sha256": "93198c6b5a79e94c6e73a2c0fce496e4c39316951a670cd8e38888a434b0184a",
+  "audit_input_sha256": {
+    "collection.json": "1bc7c436ad588338021663ead7c98f0a7f92d88e2cc46db7b18cec2a926d6087",
+    "sources.json": "5af4dd4635af7438e40f92fbc13fe58c4cf297b3e8e017a7b2ab1b73e092dce8",
+    "terms.json": "7696c0cfc7673e7556b9b453295ada6ea1626e40eb50ddaf87f21b82e0428262",
+    "wasi-source-history.json": "c7c53b60e3dbe88ecf5d29f811e446e1f59d23fd0c8cbc868b9566659925a1d1",
+    "wasi-sources.json": "7a55941506cb392f99976e0694e44bbf11105c11974844c5aebdc981fc7a6bca"
+  },
+  "collection": {
+    "limits": "comparison snapshots are not claimed original-import revisions",
+    "local_clang_version": "clang version 22.1.0-wasi-sdk (https://github.com/llvm/llvm-project 4434dabb69916856b824f68a64b029c67175e532)\nTarget: wasm32-unknown-wasip1\nThread model: posix\nInstalledDir: /Users/gook/Repos/gams3/.dev-tools/wasi-sdk-33.0-arm64-macos/bin\nConfiguration file: /Users/gook/Repos/gams3/.dev-tools/wasi-sdk-33.0-arm64-macos/bin/clang.cfg\n",
+    "local_wasi_sdk_version": "33.0+m\nwasi-libc: 161b3195fc25\nllvm: 4434dabb6991\nllvm-version: 22.1.0\nconfig: f992bcc08219\n",
+    "markov_comparison_remote": "justgook/MarkovJunior",
+    "markov_comparison_revision": "c44cae86d03cdcd13154a96170ca7a722aabb8d6",
+    "snapshot": "working-tree hashes, not clean-commit claim",
+    "source_revision": "0f0a1b8ae678d45b451aa4d2841797fcbc2f503d"
+  },
+  "distribution_contract": {
+    "component": {
+      "artifacts": [
+        "plugin.tile-detect.wasm"
+      ],
+      "binding": null,
+      "members": [
+        "tile-detect"
+      ],
+      "name": "plugin.tile-detect",
+      "slug": "tile-detect",
+      "source": "tile-detect",
+      "world": "tile-detect-plugin"
+    },
+    "files": {
+      "dist/plugin.tile-detect.wasm": "plugins/tile-detect.comp.wasm"
+    }
+  },
+  "files_sha256": {
+    ".envrc": "1d26c74fd25a4c3dbb09e029fc609588da499fd4af2a41c88f6316c7f8c54cf1",
+    ".gitattributes": "02a00a5e791aceec9288ce23f6ccdd26fb5356bc6da5f926c1866c1b906d1d8e",
+    ".github/workflows/release.yml": "5b57d05928f471eb1ef792ae9be6aab02aaf70e557be0c62433c88cdd9080479",
+    ".github/workflows/verify.yml": "ec66e6d7ccc76ebd1f77f725f5be0b83f783ff0efbbf4655658146a99ddc470b",
+    ".gitignore": "35d5cf3e93f7c09e8bf44231a378d77943e69e97b4f5dc266e14053e1c45d541",
+    "CONTEXT.md": "210b744a4ea2dd5f73f87d1f7b4c9c7bcdc79c26d9f7dd41310d6482f9140fde",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LICENSES/CC0-1.0.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "LICENSES/W3C-Community-CLA.html": "14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f",
+    "LICENSES/compiler-rt-full.txt": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+    "LICENSES/go-BSD.txt": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "LICENSES/go-github.com_coreos_go-semver-v0.3.1-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LICENSES/go-github.com_coreos_go-semver-v0.3.1-NOTICE": "572b159624f1898b40e9f09c9e4cfb65a595044960982aa95126bc28f7d1e6c0",
+    "LICENSES/go-github.com_docker_libtrust-v0.0.0-20160708172513-aabc10ec26b7-LICENSE": "552a739c3b25792263f731542238b92f6f8d07e9a488eae27e6c4690038a8243",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-LICENSE": "0d9e582ee4bff57bf1189c9e514e6da7ce277f9cd3bc2d488b22fbb39a6d87cf",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-gzhttp_LICENSE": "2252a5b1e2b1d3663b53ea77051b8ed065cb9270a3d1174d5d6ead8a2de051b6",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-internal_lz4ref_LICENSE": "6a358d2540ca14048f02d366f23787c0a480157e58f058113f0e27168dd4e447",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-internal_snapref_LICENSE": "f69f157b0be75da373605dbc8bbf142e8924ee82d8f44f11bcaf351335bf98cf",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-s2_LICENSE": "08683b14bda8ae3538abf19e1879e853a39e3b8276a8d673363b529d15a61c1a",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-s2_cmd_internal_filepathx_LICENSE": "8582c87d9a6baa28f7827c5205b7d16c3179bc794ebd4c7cc287c49a89b7eaa1",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-s2_cmd_internal_readahead_LICENSE": "10fa24a602fde465db603cd5d546e37e33642a73cd24ddf5910be81724fec8b2",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-snappy_LICENSE": "f69f157b0be75da373605dbc8bbf142e8924ee82d8f44f11bcaf351335bf98cf",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-snappy_xerial_LICENSE": "d4ff111fa30ac75e28dca3868de957a3b73ff50b76bc4b8fe5c3a1f008d26703",
+    "LICENSES/go-github.com_klauspost_compress-v1.18.0-zstd_internal_xxhash_LICENSE.txt": "f566a9f97bacdaf00d9f21dd991e81dc11201c4e016c86b470799429a1c9a79c",
+    "LICENSES/go-github.com_opencontainers_go-digest-v1.0.0-LICENSE": "aceb55133c41c50c2e170c5918e301fe74f592d0f28724bf2f7a7bfdcff1fc5f",
+    "LICENSES/go-github.com_opencontainers_go-digest-v1.0.0-LICENSE.docs": "a1d1adec3ba691ef6e377a78bbe9e9e2501f2f4a1723d08857da1ac6564e4fed",
+    "LICENSES/go-github.com_regclient_regclient-v0.8.3-LICENSE": "4ff681f8e07d692d27215e825519e1ab6a68cf5c0333cd5711a952fbacaad8f8",
+    "LICENSES/go-github.com_sirupsen_logrus-v1.9.3-LICENSE": "51a0c9ec7f8b7634181b8d4c03e5b5d204ac21d6e72f46c313973424664b2e6b",
+    "LICENSES/go-github.com_tetratelabs_wazero-v1.9.0-LICENSE": "c46f033d017a5af71a1de0105ec56c41bd47f81a0bbdf779fffe316336dc7c1f",
+    "LICENSES/go-github.com_tetratelabs_wazero-v1.9.0-NOTICE": "e6f0c5c151a3ff1eba8f5930a31ec084ca6d7adda43c8675ab81f7d36af50b4f",
+    "LICENSES/go-github.com_ulikunitz_xz-v0.5.12-LICENSE": "701cbcc144a7c865b072f27547e66ddbf17ac44a3bd21f71149ace02518f107c",
+    "LICENSES/go-github.com_urfave_cli_v3-v3.3.3-LICENSE": "85695dfe027cabaf97c7fea77c45a01a36c0815e52df9219894b1ba031ee72f0",
+    "LICENSES/go-go.bytecodealliance.org-v0.7.0-LICENSE": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+    "LICENSES/go-go.bytecodealliance.org_cm-v0.3.0-LICENSE": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+    "LICENSES/go-golang.org_x_mod-v0.24.0-LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "LICENSES/go-golang.org_x_sys-v0.33.0-LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "LICENSES/llvm-compiler-rt-release80.txt": "dd27f8c290bcdc8368549cd7cd98710a9dbdc34122f2e096a1edb97824ed4148",
+    "LICENSES/qoi-MIT.txt": "0caf25d92ae0e7e12107e144a86782ccaad37ddaa3ee51e86e193c7db9ed1487",
+    "LICENSES/qoi-go-MIT.txt": "655e6f924f9d8e7c8fdc6431525bd8106720ba883f689fda48eee3d3c0901252",
+    "LICENSES/tinygo-BSD.txt": "4cb7d99a97ebd57584ea8398898c4b0bbbcb39662330712b43153efdad308766",
+    "LICENSES/wasi-WIT-Apache-LLVM.txt": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb",
+    "LICENSES/wasi-emmalloc-emscripten-full.txt": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+    "LICENSES/wasi-io-v0.2.0-LICENSE.md": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb",
+    "LICENSES/wasi-libc-LICENSE-APACHE-LLVM.txt": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+    "LICENSES/wasi-libc-LICENSE-APACHE.txt": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+    "LICENSES/wasi-libc-LICENSE-MIT.txt": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+    "LICENSES/wasi-libc-LICENSE.txt": "2711a8b5a5cdfef0e639f96c1aca12ae23d7d64a02d0507f1bdf14d2b27bbc3a",
+    "LICENSES/wasi-libc-dlmalloc-notice.txt": "4872c477338a576d7944d308b1d491afeb78408b9eca788468d5a1adae735553",
+    "LICENSES/wasi-libc-emmalloc-notice.txt": "39dc3bb396a3fb991b80a5a243efc6449894420a20d0d9a283b41a5425de2ced",
+    "LICENSES/wasi-libc-fts_musl-fts_COPYING.txt": "55af87e4017668f54467a3380e7ebbac5e672d8c763bfe95e6fc882a6fdc4046",
+    "LICENSES/wasi-libc-libc-bottom-half_cloudlibc_LICENSE.txt": "c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0",
+    "LICENSES/wasi-libc-libc-top-half_musl_COPYRIGHT.txt": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+    "LICENSES/wasi-v0.2.0-LICENSE.md": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb",
+    "LICENSES/wasmtime-Apache-LLVM.txt": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+    "LICENSES/wit-bindgen-Apache.txt": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+    "LICENSES/wit-bindgen-MIT.txt": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+    "LICENSING.md": "9c90a7d909f589c226e600b2cd66f551d7769ba9de2b67fc2ee5e9d751de256e",
+    "Makefile": "bebe6c97ccd2d043a593ba5e1a2b27a0c4ff036f2ece06745806deead7d257bf",
+    "PREPARATION.md": "bbe0fe0dad19ce239966fe7695cb69494220002357767ab0234f266a5682716e",
+    "README.md": "c0b051c43a612395eaf39937613138bf63bf52fec2ca98d78eb546aa22558c18",
+    "SOURCE-INPUTS.json": "dd504607376c431ecf43e8d293d0af22ecfe8060eaf8e2f55f2bfa16cbb88e98",
+    "THIRD-PARTY-REVIEW.md": "3dcd4375ae57b38be3caed68c9bc4bbc5da12ec2070a45fa2416ba435a4cc86f",
+    "THIRD-PARTY-SOURCE.json": "40d4f1fce39c59ebb5995356382c8e3ce323ebc7c5b715a4d33c63b14d1b7ce4",
+    "component.json": "50bf80b8623c15b4d74113d096379e5d85aad8ef097035b5808f59f5ff817115",
+    "flake.lock": "3adbe3447e662145dd50a383489f62e7bfbe16996281e113b1fbac347eca3eae",
+    "flake.nix": "cb08dce39ca4418b7730f48afedc96c7f7cc91b5e7090a1c0a95855b4c844931",
+    "package-lock.json": "16ecbbca18ee486ab53f93530e89b31adde8ca78dbd67eb0b6e76e5c97dc58c0",
+    "package.json": "29dbac0adcfc3f166648410ce38c2ec1296830ba25b5eeab4cd2e63558119f4b",
+    "plugins/tile-detect.comp/go.mod": "be7e9b426f9dcac13da08a5e4bee99d4cef0e8a212b7082281125b958668a9bb",
+    "plugins/tile-detect.comp/go.sum": "34bf598a4785ee3de6bdffaaf9da82ee18ea55706de5745a1edfb2bbbef41b66",
+    "plugins/tile-detect.comp/main.go": "465c6af88b4905b29819adb3205d9b0f6e219c77f4f547046c5b1a918be0ac35",
+    "plugins/tile-detect.comp/plugin.mk": "d4feb8c8bf892bfaeb84a6ecfb0257d31921445907f950fb7fc69e47e30b5d70",
+    "plugins/tile-detect.comp/wit/deps/cli/command.wit": "da467a3a1b7a1bf6d9ec10b5bc5cbb90ddbc912b34495e19c1d5fe6c5b130349",
+    "plugins/tile-detect.comp/wit/deps/cli/environment.wit": "8d4f13e628d2e8f029f6d668d8075db5e6c8867238c0436cc966dd9a535148e1",
+    "plugins/tile-detect.comp/wit/deps/cli/exit.wit": "337522eb41c89e660b1dabc1bae362acc462f9cbfdcb9546e790e371580175a2",
+    "plugins/tile-detect.comp/wit/deps/cli/imports.wit": "8cb6df9f4860399cac4640df6e9cb5eeea35ce70920a2f3fb631911311870bc0",
+    "plugins/tile-detect.comp/wit/deps/cli/run.wit": "50815a16aaebae4b99d2e2f9de69ddf30fc27249f41ad3cf477c4e796edf5792",
+    "plugins/tile-detect.comp/wit/deps/cli/stdio.wit": "6311ad8251ff4e0452c5be30ee70d9d6c41971c31e566dc1029d653182cd69fe",
+    "plugins/tile-detect.comp/wit/deps/cli/terminal.wit": "57b139fed58792c8dcac6cd74caf4baadda64f49b53181a999b5d6080694925c",
+    "plugins/tile-detect.comp/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "plugins/tile-detect.comp/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "plugins/tile-detect.comp/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "plugins/tile-detect.comp/wit/deps/filesystem/preopens.wit": "872e66229d4d44c0ac97751720f396729c9464f1b628fc6bda3ed2079a82e6f1",
+    "plugins/tile-detect.comp/wit/deps/filesystem/types.wit": "f26dadcbcc7b231893c5f0094b729eabeb0643dca182697433fa8ab6ab786d20",
+    "plugins/tile-detect.comp/wit/deps/filesystem/world.wit": "9e1ffb6f850441124c4fe07bcede8cb3c4b6186f1dc020cb9189020b8a853c2b",
+    "plugins/tile-detect.comp/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "plugins/tile-detect.comp/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "plugins/tile-detect.comp/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "plugins/tile-detect.comp/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "plugins/tile-detect.comp/wit/deps/random/insecure-seed.wit": "9ebba944fef13d4db4a124519349ebf03febaff40f78f818d2c77c926281eb12",
+    "plugins/tile-detect.comp/wit/deps/random/insecure.wit": "28880bdfebda2f39f36f5fe5a1d20f6f1e76f1793ff6e973e34ff8cb4cdc633d",
+    "plugins/tile-detect.comp/wit/deps/random/random.wit": "b36eb876e39d3a0d63d6ca0c6fc4e84278ddc22c48173906645ed3dae3ef0c79",
+    "plugins/tile-detect.comp/wit/deps/random/world.wit": "7db07eadfefe2d2f042b5b7a283d5c5b8ab2a25276c352cfcc6cc9fd1a7b5fc7",
+    "plugins/tile-detect.comp/wit/deps/sockets/instance-network.wit": "ad100127c74b967064cf5d8e1770f6f0d787ef55f07ba9f6b334bc4c98c82282",
+    "plugins/tile-detect.comp/wit/deps/sockets/ip-name-lookup.wit": "fdfd3f54f7b82457c3b08b7c941c0a50a1fc15cdf23d692ccc5680eeb29313cd",
+    "plugins/tile-detect.comp/wit/deps/sockets/network.wit": "db6583f0e2425abbb7621a26716371983e9753ec1c44c580a888a603e74a8840",
+    "plugins/tile-detect.comp/wit/deps/sockets/tcp-create-socket.wit": "6a9175598eb628ee8a14989efa0ef4e3244aae1d339f1c882467c5c8226e02ef",
+    "plugins/tile-detect.comp/wit/deps/sockets/tcp.wit": "aa7a316ce0cfb8b42c0f592b5096d218da8ad75e7878f06329954e22040c3ee5",
+    "plugins/tile-detect.comp/wit/deps/sockets/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
+    "plugins/tile-detect.comp/wit/deps/sockets/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
+    "plugins/tile-detect.comp/wit/deps/sockets/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
+    "plugins/tile-detect.comp/wit/package.wit": "bff1d13834059a9ace93767deb58b57e90afae12288b37a3e0e40a2f4734b06b",
+    "plugins/tile-detect.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
+    "scripts/build.py": "40e1ddf6e4bdda34d4456411bcbfa0850a2905b467d4a1ca7448cee634be396d",
+    "scripts/candidate.py": "a75a8b1aec7af8e1ef5a78885d65945b848af5e5082a0323d952e89c43fe2f71",
+    "scripts/check-licensing-digests.sh": "0dfa34f834af2e065e8cbf325cc8eaf2beaf6dc60093f802466799c48d59ff21",
+    "scripts/check-release-absent.sh": "b25a4c19ea5a79f6e6f7b2afe459d127ec13dfadb1d28a2c7cf820ed127250ee",
+    "scripts/check-release-metadata.sh": "48c6d962b5e4fdccc76f2a983166d6cedec34d7c7861bb66fdb4ae6e3c290d03",
+    "scripts/check-source.py": "b4bff79c8d7d13ea121d9e18a921084c0e076474a631de8c430701873440a72c",
+    "scripts/inputs.py": "c61e7cd875d429d623d083da40c65639b2b311cb1a046bad5316efa1229e71d7",
+    "scripts/legal.py": "6e9633f143a4cc609c676c68541b5238fdc85c1454bdc898fc6367dc29f331f0",
+    "scripts/publication.py": "f4c97f3a84c866942e7427392d156144aff53f35e4149c2def3c171368bd8391",
+    "scripts/tooling.py": "d98e1f61e60ee1d600a23d719a3637d2cc8b5249e37c890180528b3223b5ea34",
+    "scripts/wasm-notices.py": "91d94800f753ae948e9289393da9b6b63f6dc24e154a41fbdae2fd59f9305d85",
+    "sdk/go.mod": "8331394324db51145a124ebc4ae7176cd6fc85a192133dd092025bfffb4633cd",
+    "sdk/go/qoi/qoi.go": "6094211ae5990b92f5fba0ead3b8f2920aa349d95dedf9a412b1f2f6ff33e529",
+    "sdk/go/tilemap/resize.go": "cde0913b54c90fee44cb6147baa5ff0992441ba22b158591e155ad6fcdde9e8c",
+    "sdk/go/tilemap/selector.go": "b4f15971887832d0dba4ac75df199853ca9fd1184e1ee3acd66a09fa0cbf9849",
+    "sdk/go/tilemap/selector_test.go": "e918ce6ff48e15c9af787405e4b29823cecced0a636b7ffd1d514828f0f97c94",
+    "sdk/go/tilemap/tilemap.go": "6687627e21145752ba10471ac1ddd4ea37378a0530872f2655054b026677d135",
+    "sdk/go/tree/tree.go": "34240869587cbc300febe3f541f92d7e22430477ec36a61da9cff9c02b4215d4",
+    "test/runtime.mjs": "d0bcae167cdbf0b4bc9f6a02821a03a8d7469fdaa18a14a10ca2ddcca0ea1c7c",
+    "test/test_integrity.py": "35936d0df14d552d49acf5aaa707dbd38024dbc164acf7c939ebedbe0f5219f2",
+    "third_party/wasi-0.2.0/LICENSE.md": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb",
+    "third_party/wasi-0.2.0/UPSTREAM.json": "0785327c2999d49431b2e0450f3de04e6013c9c71799dff14ff0d0b133550f09",
+    "third_party/wasi-0.2.0/W3C-Community-CLA.html": "14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f",
+    "third_party/wasi-0.2.0/cli/wit/command.wit": "da467a3a1b7a1bf6d9ec10b5bc5cbb90ddbc912b34495e19c1d5fe6c5b130349",
+    "third_party/wasi-0.2.0/cli/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "third_party/wasi-0.2.0/cli/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "third_party/wasi-0.2.0/cli/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "third_party/wasi-0.2.0/cli/wit/deps/filesystem/preopens.wit": "872e66229d4d44c0ac97751720f396729c9464f1b628fc6bda3ed2079a82e6f1",
+    "third_party/wasi-0.2.0/cli/wit/deps/filesystem/types.wit": "f26dadcbcc7b231893c5f0094b729eabeb0643dca182697433fa8ab6ab786d20",
+    "third_party/wasi-0.2.0/cli/wit/deps/filesystem/world.wit": "9e1ffb6f850441124c4fe07bcede8cb3c4b6186f1dc020cb9189020b8a853c2b",
+    "third_party/wasi-0.2.0/cli/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "third_party/wasi-0.2.0/cli/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "third_party/wasi-0.2.0/cli/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "third_party/wasi-0.2.0/cli/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "third_party/wasi-0.2.0/cli/wit/deps/random/insecure-seed.wit": "9ebba944fef13d4db4a124519349ebf03febaff40f78f818d2c77c926281eb12",
+    "third_party/wasi-0.2.0/cli/wit/deps/random/insecure.wit": "28880bdfebda2f39f36f5fe5a1d20f6f1e76f1793ff6e973e34ff8cb4cdc633d",
+    "third_party/wasi-0.2.0/cli/wit/deps/random/random.wit": "b36eb876e39d3a0d63d6ca0c6fc4e84278ddc22c48173906645ed3dae3ef0c79",
+    "third_party/wasi-0.2.0/cli/wit/deps/random/world.wit": "7db07eadfefe2d2f042b5b7a283d5c5b8ab2a25276c352cfcc6cc9fd1a7b5fc7",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/instance-network.wit": "ad100127c74b967064cf5d8e1770f6f0d787ef55f07ba9f6b334bc4c98c82282",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/ip-name-lookup.wit": "fdfd3f54f7b82457c3b08b7c941c0a50a1fc15cdf23d692ccc5680eeb29313cd",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/network.wit": "db6583f0e2425abbb7621a26716371983e9753ec1c44c580a888a603e74a8840",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/tcp-create-socket.wit": "6a9175598eb628ee8a14989efa0ef4e3244aae1d339f1c882467c5c8226e02ef",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/tcp.wit": "aa7a316ce0cfb8b42c0f592b5096d218da8ad75e7878f06329954e22040c3ee5",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
+    "third_party/wasi-0.2.0/cli/wit/deps/sockets/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
+    "third_party/wasi-0.2.0/cli/wit/environment.wit": "8d4f13e628d2e8f029f6d668d8075db5e6c8867238c0436cc966dd9a535148e1",
+    "third_party/wasi-0.2.0/cli/wit/exit.wit": "337522eb41c89e660b1dabc1bae362acc462f9cbfdcb9546e790e371580175a2",
+    "third_party/wasi-0.2.0/cli/wit/imports.wit": "8cb6df9f4860399cac4640df6e9cb5eeea35ce70920a2f3fb631911311870bc0",
+    "third_party/wasi-0.2.0/cli/wit/run.wit": "50815a16aaebae4b99d2e2f9de69ddf30fc27249f41ad3cf477c4e796edf5792",
+    "third_party/wasi-0.2.0/cli/wit/stdio.wit": "6311ad8251ff4e0452c5be30ee70d9d6c41971c31e566dc1029d653182cd69fe",
+    "third_party/wasi-0.2.0/cli/wit/terminal.wit": "57b139fed58792c8dcac6cd74caf4baadda64f49b53181a999b5d6080694925c",
+    "third_party/wasi-0.2.0/clocks/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "third_party/wasi-0.2.0/clocks/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "third_party/wasi-0.2.0/clocks/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "third_party/wasi-0.2.0/clocks/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "third_party/wasi-0.2.0/clocks/wit/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "third_party/wasi-0.2.0/clocks/wit/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "third_party/wasi-0.2.0/clocks/wit/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "third_party/wasi-0.2.0/filesystem/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "third_party/wasi-0.2.0/filesystem/wit/preopens.wit": "872e66229d4d44c0ac97751720f396729c9464f1b628fc6bda3ed2079a82e6f1",
+    "third_party/wasi-0.2.0/filesystem/wit/types.wit": "f26dadcbcc7b231893c5f0094b729eabeb0643dca182697433fa8ab6ab786d20",
+    "third_party/wasi-0.2.0/filesystem/wit/world.wit": "9e1ffb6f850441124c4fe07bcede8cb3c4b6186f1dc020cb9189020b8a853c2b",
+    "third_party/wasi-0.2.0/io/wit/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "third_party/wasi-0.2.0/io/wit/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "third_party/wasi-0.2.0/io/wit/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "third_party/wasi-0.2.0/io/wit/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "third_party/wasi-0.2.0/random/wit/insecure-seed.wit": "9ebba944fef13d4db4a124519349ebf03febaff40f78f818d2c77c926281eb12",
+    "third_party/wasi-0.2.0/random/wit/insecure.wit": "28880bdfebda2f39f36f5fe5a1d20f6f1e76f1793ff6e973e34ff8cb4cdc633d",
+    "third_party/wasi-0.2.0/random/wit/random.wit": "b36eb876e39d3a0d63d6ca0c6fc4e84278ddc22c48173906645ed3dae3ef0c79",
+    "third_party/wasi-0.2.0/random/wit/world.wit": "7db07eadfefe2d2f042b5b7a283d5c5b8ab2a25276c352cfcc6cc9fd1a7b5fc7",
+    "third_party/wasi-0.2.0/sockets/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "third_party/wasi-0.2.0/sockets/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "third_party/wasi-0.2.0/sockets/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "third_party/wasi-0.2.0/sockets/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "third_party/wasi-0.2.0/sockets/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "third_party/wasi-0.2.0/sockets/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "third_party/wasi-0.2.0/sockets/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "third_party/wasi-0.2.0/sockets/wit/instance-network.wit": "ad100127c74b967064cf5d8e1770f6f0d787ef55f07ba9f6b334bc4c98c82282",
+    "third_party/wasi-0.2.0/sockets/wit/ip-name-lookup.wit": "fdfd3f54f7b82457c3b08b7c941c0a50a1fc15cdf23d692ccc5680eeb29313cd",
+    "third_party/wasi-0.2.0/sockets/wit/network.wit": "db6583f0e2425abbb7621a26716371983e9753ec1c44c580a888a603e74a8840",
+    "third_party/wasi-0.2.0/sockets/wit/tcp-create-socket.wit": "6a9175598eb628ee8a14989efa0ef4e3244aae1d339f1c882467c5c8226e02ef",
+    "third_party/wasi-0.2.0/sockets/wit/tcp.wit": "aa7a316ce0cfb8b42c0f592b5096d218da8ad75e7878f06329954e22040c3ee5",
+    "third_party/wasi-0.2.0/sockets/wit/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
+    "third_party/wasi-0.2.0/sockets/wit/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
+    "third_party/wasi-0.2.0/sockets/wit/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
+    "version.txt": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+  },
+  "findings": [
+    "QOI C: Dominic Szablewski (2021), MIT. Copied Go QOI names Xavier-Fr\u00e9d\u00e9ric Moulet; full independent upstream MIT text retained even when the helper is source-distributed but not linked. No assertion of an original port revision.",
+    "Go go.mod/go.sum bind cm@v0.3.0 and wit-bindgen-go tool@v0.7.0 plus declared indirect modules; complete cached module LICENSE/COPYING/NOTICE files retained, including nested terms. SDK helper imports and Go standard library are runtime inputs; not every indirect generator dependency is linked.",
+    "Generated C component ABI glue uses flake-pinned wit-bindgen v0.57.1 (2e00369a643c0c8048b8636401e36b0cbf2dfb05); complete upstream MIT/Apache choices retained, not assumed owner-authored glue. Generated Go ABI bindings use the separately inventoried wit-bindgen-go module tool.",
+    "C build uses wasm32-wasip2-clang (WASI SDK 33), wasi-libc 161b3195fc2558d2b1ba3eb9ffae3b2b47407623 and LLVM/compiler-rt 4434dabb69916856b824f68a64b029c67175e532, matching local SDK VERSION/clang evidence. Direct Preview2 C linkage does NOT imply an injected Preview1 adapter. Go uses TinyGo wasip2 runtime and its component assembly; any standard Preview1\u2192Preview2 adapter must be identified by actual build/module evidence. Wasmtime adapter terms retained conditionally, not claimed as a C link input. Runtime reachability/adapter exact source and digest still require actual hosted evidence. The retained wasi-io 3983fe1\u2026 Apache-LLVM text is a newer comparison only, NOT the license of the vendored v0.2.0 specification bytes.",
+    "WASI Preview 2 specification v0.2.0; wasi:cli@0.2.0, wasi:clocks@0.2.0, wasi:filesystem@0.2.0, wasi:random@0.2.0, wasi:sockets@0.2.0 and wasi:io@0.2.0. Copyright \u00a9 2019-2023 the Contributors to the WASI Specification, published by the WebAssembly Community Group under the W3C Community Contributor License Agreement (CLA). Source: WebAssembly/WASI 70214b878af4ce45889b4ad9d26a7ac98db8931b, preview2/. The official umbrella root LICENSE.md explicitly covers these specification definitions; all 29 distinct WIT files / 69 occurrences are byte-identical to that licensed v0.2.0 snapshot and the historical WIT inventory. Only WIT, upstream notices, frozen full CLA and acquisition metadata are distributed; no unrelated original-archive scripts/readmes are covered. Original standalone archive URLs/hashes remain historical in UPSTREAM.json and the prior vendor inventory is retained separately, not retroactively relicensed. No API/package-version change or Apache grant is inferred.",
+    "Complete umbrella notice, original IO notice and frozen full W3C CLA HTML are retained in LICENSES; full CLA SHA-256 14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f, acquisition URL https://www.w3.org/community/about/agreements/cla/ (mutable URL, frozen bytes). CLA \u00a72.1 grants reproduction, derivatives, sublicensing, distribution and implementation of Contributions; \u00a72.2 requires Specification name/version attribution for derivatives, supplied here and required in generated-binding/candidate/tooling notices. \u00a71 excludes source code outside the Specification. \u00a73/\u00a712.8 retain RF patent commitments, reciprocity/suspension conditions, not an unconditional Apache patent grant. Contributor execution/withdrawals and Final Specification agreement coverage are not independently certified; no FSA or patent clearance is asserted. These reliance limitations are not discovered permission defects. Newer wasi-io Apache-LLVM text is comparison-only, never exact v0.2.0 authority."
+  ],
+  "hash_exclusions": {
+    "NOTICE": "contains the digest of NOTICE-EVIDENCE.json; independently hashed in returned record",
+    "NOTICE-EVIDENCE.json": "self-reference: this manifest cannot hash itself",
+    "SOURCE.json": "written by orchestrator after audit; must bind NOTICE and evidence independently"
+  },
+  "host_runtime_imports": [],
+  "limits": [
+    "Working-tree source comparison, not an original-authorship, original-import, or all-history certificate. Owner Apache approval applies only to owner-controlled contributions.",
+    "Exact prepared repository bytes are bound below, including build inputs/lockfiles/tests. No current build, enabled-feature graph, linked-code reachability, adapter digest, or final WASM/ZIP contents are certified by this source audit.",
+    "Pinned upstream license comparisons establish readable terms, not the version of every historical imported fragment. Newly discovered identifiable missing permissions remain blockers; historical lineage uncertainty alone does not veto approved GAMS-authored work.",
+    "Build tools (jco, wit-bindgen, C#/Odin parity runners) are not automatically distributed runtime code. Go module inventory conservatively includes generator-only dependencies. Final linked runtime and standard adapters require hosted build evidence."
+  ],
+  "notice_body_sha256": "c7fcf6baa2cf3d94c0239f60facfb3853aa8ef5efdb7c6cd34bf45a8aab0b2ee",
+  "permission_blockers": [],
+  "prepared_adaptations": {
+    ".gitattributes": {
+      "comparison_candidates": [
+        "packages/fonts/licenses/.gitattributes",
+        "packages/util/licenses/.gitattributes",
+        "packages/widgets/licenses/.gitattributes"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "Makefile": {
+      "comparison_candidates": [
+        "plugins/automap.comp/Makefile",
+        "plugins/minimap.comp/Makefile",
+        "plugins/scaler.comp/Makefile",
+        "plugins/treegen.comp/Makefile"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "README.md": {
+      "comparison_candidates": [
+        "plugins/markov-junior.comp/README.md",
+        "plugins/markov-junior.comp/docs/README.md"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "plugins/tile-detect.comp/wit/deps/filesystem/types.wit": {
+      "comparison_candidates": [
+        "plugins/sql-vec.comp/wit/types.wit",
+        "plugins/sql.comp/wit/types.wit"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "sdk/go.mod": {
+      "comparison_candidates": [
+        "plugins/minimap.comp/go.mod",
+        "plugins/scaler.comp/go.mod",
+        "plugins/tile-detect.comp/go.mod",
+        "plugins/treegen.comp/go.mod",
+        "sdk/go.mod"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "third_party/wasi-0.2.0/cli/wit/deps/filesystem/types.wit": {
+      "comparison_candidates": [
+        "plugins/sql-vec.comp/wit/types.wit",
+        "plugins/sql.comp/wit/types.wit"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    },
+    "third_party/wasi-0.2.0/filesystem/wit/types.wit": {
+      "comparison_candidates": [
+        "plugins/sql-vec.comp/wit/types.wit",
+        "plugins/sql.comp/wit/types.wit"
+      ],
+      "status": "prepared/generated/adapted bytes differ; not asserted identical to reviewed source"
+    }
+  },
+  "prepared_exact_source_origins": {
+    "plugins/tile-detect.comp/go.mod": [
+      "plugins/tile-detect.comp/go.mod"
+    ],
+    "plugins/tile-detect.comp/go.sum": [
+      "plugins/minimap.comp/go.sum",
+      "plugins/scaler.comp/go.sum",
+      "plugins/tile-detect.comp/go.sum",
+      "plugins/treegen.comp/go.sum"
+    ],
+    "plugins/tile-detect.comp/main.go": [
+      "plugins/tile-detect.comp/main.go"
+    ],
+    "plugins/tile-detect.comp/plugin.mk": [
+      "plugins/tile-detect.comp/plugin.mk"
+    ],
+    "plugins/tile-detect.comp/wit/package.wit": [
+      "plugins/tile-detect.comp/wit/package.wit"
+    ],
+    "plugins/tile-detect.comp/wkg.lock": [
+      "plugins/minimap.comp/wkg.lock",
+      "plugins/scaler.comp/wkg.lock",
+      "plugins/tile-detect.comp/wkg.lock",
+      "plugins/treegen.comp/wkg.lock"
+    ],
+    "sdk/go/qoi/qoi.go": [
+      "sdk/go/qoi/qoi.go"
+    ],
+    "sdk/go/tilemap/resize.go": [
+      "sdk/go/tilemap/resize.go"
+    ],
+    "sdk/go/tilemap/selector.go": [
+      "sdk/go/tilemap/selector.go"
+    ],
+    "sdk/go/tilemap/selector_test.go": [
+      "sdk/go/tilemap/selector_test.go"
+    ],
+    "sdk/go/tilemap/tilemap.go": [
+      "sdk/go/tilemap/tilemap.go"
+    ],
+    "sdk/go/tree/tree.go": [
+      "sdk/go/tree/tree.go"
+    ]
+  },
+  "repository": "plugin.tile-detect",
+  "schema": 1,
+  "scope": "selected prepared repository/source inputs; no build executed",
+  "shipped_host_source_files": [],
+  "source_comparison_exclusions": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".zig-cache",
+      "__pycache__",
+      "bin",
+      "build",
+      "build.nosync",
+      "dist",
+      "internal",
+      "node_modules",
+      "obj",
+      "target",
+      "zig-out"
+    ],
+    "generated_suffix": ".mjir.json",
+    "legal_evidence_preserved": true,
+    "suffixes": [
+      ".a",
+      ".bin",
+      ".dll",
+      ".dylib",
+      ".exe",
+      ".o",
+      ".obj",
+      ".pyc",
+      ".so",
+      ".stamp",
+      ".wasm"
+    ]
+  },
+  "source_files_sha256": {
+    "plugins/minimap.comp/go.sum": "34bf598a4785ee3de6bdffaaf9da82ee18ea55706de5745a1edfb2bbbef41b66",
+    "plugins/minimap.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
+    "plugins/scaler.comp/go.sum": "34bf598a4785ee3de6bdffaaf9da82ee18ea55706de5745a1edfb2bbbef41b66",
+    "plugins/scaler.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
+    "plugins/tile-detect.comp/go.mod": "be7e9b426f9dcac13da08a5e4bee99d4cef0e8a212b7082281125b958668a9bb",
+    "plugins/tile-detect.comp/go.sum": "34bf598a4785ee3de6bdffaaf9da82ee18ea55706de5745a1edfb2bbbef41b66",
+    "plugins/tile-detect.comp/main.go": "465c6af88b4905b29819adb3205d9b0f6e219c77f4f547046c5b1a918be0ac35",
+    "plugins/tile-detect.comp/plugin.mk": "d4feb8c8bf892bfaeb84a6ecfb0257d31921445907f950fb7fc69e47e30b5d70",
+    "plugins/tile-detect.comp/wit/package.wit": "bff1d13834059a9ace93767deb58b57e90afae12288b37a3e0e40a2f4734b06b",
+    "plugins/tile-detect.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
+    "plugins/treegen.comp/go.sum": "34bf598a4785ee3de6bdffaaf9da82ee18ea55706de5745a1edfb2bbbef41b66",
+    "plugins/treegen.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
+    "sdk/go/qoi/qoi.go": "6094211ae5990b92f5fba0ead3b8f2920aa349d95dedf9a412b1f2f6ff33e529",
+    "sdk/go/tilemap/resize.go": "cde0913b54c90fee44cb6147baa5ff0992441ba22b158591e155ad6fcdde9e8c",
+    "sdk/go/tilemap/selector.go": "b4f15971887832d0dba4ac75df199853ca9fd1184e1ee3acd66a09fa0cbf9849",
+    "sdk/go/tilemap/selector_test.go": "e918ce6ff48e15c9af787405e4b29823cecced0a636b7ffd1d514828f0f97c94",
+    "sdk/go/tilemap/tilemap.go": "6687627e21145752ba10471ac1ddd4ea37378a0530872f2655054b026677d135",
+    "sdk/go/tree/tree.go": "34240869587cbc300febe3f541f92d7e22430477ec36a61da9cff9c02b4215d4"
+  },
+  "upstream_terms": [
+    {
+      "authority": "https://raw.githubusercontent.com/phoboslab/qoi/ffb2d2cb74a1de60819b21b939f7209aa53e91c1/LICENSE",
+      "file": "qoi-MIT.txt",
+      "sha256": "0caf25d92ae0e7e12107e144a86782ccaad37ddaa3ee51e86e193c7db9ed1487"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/xfmoulet/qoi/b997d9ad6cba10dd9cc5e7f477d4045a7130006e/LICENSE.txt",
+      "file": "qoi-go-MIT.txt",
+      "sha256": "655e6f924f9d8e7c8fdc6431525bd8106720ba883f689fda48eee3d3c0901252"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/llvm/llvm-project/4434dabb69916856b824f68a64b029c67175e532/compiler-rt/LICENSE.TXT",
+      "file": "compiler-rt-full.txt",
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/tinygo-org/tinygo/bdc4a21af007d8f059b5cefe5644b7ee7bda5b2d/LICENSE",
+      "file": "tinygo-BSD.txt",
+      "sha256": "4cb7d99a97ebd57584ea8398898c4b0bbbcb39662330712b43153efdad308766"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/golang/go/bed6c81c2dceeb19c7f9e46fc173671abcda7cfd/LICENSE",
+      "file": "go-BSD.txt",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "authority": "packaging/ecosystem/example_game1/audit/licenses/llvm-compiler-rt-release80.txt",
+      "comparison_only": true,
+      "file": "llvm-compiler-rt-release80.txt",
+      "sha256": "dd27f8c290bcdc8368549cd7cd98710a9dbdc34122f2e096a1edb97824ed4148"
+    },
+    {
+      "authority": "Go module cache go.bytecodealliance.org/cm@v0.3.0/LICENSE",
+      "file": "go-go.bytecodealliance.org_cm-v0.3.0-LICENSE",
+      "module": "go.bytecodealliance.org/cm",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "version": "v0.3.0"
+    },
+    {
+      "authority": "Go module cache github.com/coreos/go-semver@v0.3.1/LICENSE",
+      "file": "go-github.com_coreos_go-semver-v0.3.1-LICENSE",
+      "module": "github.com/coreos/go-semver",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "version": "v0.3.1"
+    },
+    {
+      "authority": "Go module cache github.com/coreos/go-semver@v0.3.1/NOTICE",
+      "file": "go-github.com_coreos_go-semver-v0.3.1-NOTICE",
+      "module": "github.com/coreos/go-semver",
+      "sha256": "572b159624f1898b40e9f09c9e4cfb65a595044960982aa95126bc28f7d1e6c0",
+      "version": "v0.3.1"
+    },
+    {
+      "authority": "Go module cache github.com/docker/libtrust@v0.0.0-20160708172513-aabc10ec26b7/LICENSE",
+      "file": "go-github.com_docker_libtrust-v0.0.0-20160708172513-aabc10ec26b7-LICENSE",
+      "module": "github.com/docker/libtrust",
+      "sha256": "552a739c3b25792263f731542238b92f6f8d07e9a488eae27e6c4690038a8243",
+      "version": "v0.0.0-20160708172513-aabc10ec26b7"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "0d9e582ee4bff57bf1189c9e514e6da7ce277f9cd3bc2d488b22fbb39a6d87cf",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/gzhttp/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-gzhttp_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "2252a5b1e2b1d3663b53ea77051b8ed065cb9270a3d1174d5d6ead8a2de051b6",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/internal/lz4ref/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-internal_lz4ref_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "6a358d2540ca14048f02d366f23787c0a480157e58f058113f0e27168dd4e447",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/internal/snapref/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-internal_snapref_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "f69f157b0be75da373605dbc8bbf142e8924ee82d8f44f11bcaf351335bf98cf",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/s2/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-s2_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "08683b14bda8ae3538abf19e1879e853a39e3b8276a8d673363b529d15a61c1a",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/s2/cmd/internal/filepathx/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-s2_cmd_internal_filepathx_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "8582c87d9a6baa28f7827c5205b7d16c3179bc794ebd4c7cc287c49a89b7eaa1",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/s2/cmd/internal/readahead/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-s2_cmd_internal_readahead_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "10fa24a602fde465db603cd5d546e37e33642a73cd24ddf5910be81724fec8b2",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/snappy/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-snappy_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "f69f157b0be75da373605dbc8bbf142e8924ee82d8f44f11bcaf351335bf98cf",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/snappy/xerial/LICENSE",
+      "file": "go-github.com_klauspost_compress-v1.18.0-snappy_xerial_LICENSE",
+      "module": "github.com/klauspost/compress",
+      "sha256": "d4ff111fa30ac75e28dca3868de957a3b73ff50b76bc4b8fe5c3a1f008d26703",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/klauspost/compress@v1.18.0/zstd/internal/xxhash/LICENSE.txt",
+      "file": "go-github.com_klauspost_compress-v1.18.0-zstd_internal_xxhash_LICENSE.txt",
+      "module": "github.com/klauspost/compress",
+      "sha256": "f566a9f97bacdaf00d9f21dd991e81dc11201c4e016c86b470799429a1c9a79c",
+      "version": "v1.18.0"
+    },
+    {
+      "authority": "Go module cache github.com/opencontainers/go-digest@v1.0.0/LICENSE",
+      "file": "go-github.com_opencontainers_go-digest-v1.0.0-LICENSE",
+      "module": "github.com/opencontainers/go-digest",
+      "sha256": "aceb55133c41c50c2e170c5918e301fe74f592d0f28724bf2f7a7bfdcff1fc5f",
+      "version": "v1.0.0"
+    },
+    {
+      "authority": "Go module cache github.com/opencontainers/go-digest@v1.0.0/LICENSE.docs",
+      "file": "go-github.com_opencontainers_go-digest-v1.0.0-LICENSE.docs",
+      "module": "github.com/opencontainers/go-digest",
+      "sha256": "a1d1adec3ba691ef6e377a78bbe9e9e2501f2f4a1723d08857da1ac6564e4fed",
+      "version": "v1.0.0"
+    },
+    {
+      "authority": "Go module cache github.com/regclient/regclient@v0.8.3/LICENSE",
+      "file": "go-github.com_regclient_regclient-v0.8.3-LICENSE",
+      "module": "github.com/regclient/regclient",
+      "sha256": "4ff681f8e07d692d27215e825519e1ab6a68cf5c0333cd5711a952fbacaad8f8",
+      "version": "v0.8.3"
+    },
+    {
+      "authority": "Go module cache github.com/sirupsen/logrus@v1.9.3/LICENSE",
+      "file": "go-github.com_sirupsen_logrus-v1.9.3-LICENSE",
+      "module": "github.com/sirupsen/logrus",
+      "sha256": "51a0c9ec7f8b7634181b8d4c03e5b5d204ac21d6e72f46c313973424664b2e6b",
+      "version": "v1.9.3"
+    },
+    {
+      "authority": "Go module cache github.com/tetratelabs/wazero@v1.9.0/LICENSE",
+      "file": "go-github.com_tetratelabs_wazero-v1.9.0-LICENSE",
+      "module": "github.com/tetratelabs/wazero",
+      "sha256": "c46f033d017a5af71a1de0105ec56c41bd47f81a0bbdf779fffe316336dc7c1f",
+      "version": "v1.9.0"
+    },
+    {
+      "authority": "Go module cache github.com/tetratelabs/wazero@v1.9.0/NOTICE",
+      "file": "go-github.com_tetratelabs_wazero-v1.9.0-NOTICE",
+      "module": "github.com/tetratelabs/wazero",
+      "sha256": "e6f0c5c151a3ff1eba8f5930a31ec084ca6d7adda43c8675ab81f7d36af50b4f",
+      "version": "v1.9.0"
+    },
+    {
+      "authority": "Go module cache github.com/ulikunitz/xz@v0.5.12/LICENSE",
+      "file": "go-github.com_ulikunitz_xz-v0.5.12-LICENSE",
+      "module": "github.com/ulikunitz/xz",
+      "sha256": "701cbcc144a7c865b072f27547e66ddbf17ac44a3bd21f71149ace02518f107c",
+      "version": "v0.5.12"
+    },
+    {
+      "authority": "Go module cache github.com/urfave/cli/v3@v3.3.3/LICENSE",
+      "file": "go-github.com_urfave_cli_v3-v3.3.3-LICENSE",
+      "module": "github.com/urfave/cli/v3",
+      "sha256": "85695dfe027cabaf97c7fea77c45a01a36c0815e52df9219894b1ba031ee72f0",
+      "version": "v3.3.3"
+    },
+    {
+      "authority": "Go module cache go.bytecodealliance.org@v0.7.0/LICENSE",
+      "file": "go-go.bytecodealliance.org-v0.7.0-LICENSE",
+      "module": "go.bytecodealliance.org",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "version": "v0.7.0"
+    },
+    {
+      "authority": "Go module cache golang.org/x/mod@v0.24.0/LICENSE",
+      "file": "go-golang.org_x_mod-v0.24.0-LICENSE",
+      "module": "golang.org/x/mod",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "version": "v0.24.0"
+    },
+    {
+      "authority": "Go module cache golang.org/x/sys@v0.33.0/LICENSE",
+      "file": "go-golang.org_x_sys-v0.33.0-LICENSE",
+      "module": "golang.org/x/sys",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "version": "v0.33.0"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/bytecodealliance/wit-bindgen/2e00369a643c0c8048b8636401e36b0cbf2dfb05/LICENSE-MIT",
+      "file": "wit-bindgen-MIT.txt",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/bytecodealliance/wit-bindgen/2e00369a643c0c8048b8636401e36b0cbf2dfb05/LICENSE-APACHE",
+      "file": "wit-bindgen-Apache.txt",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/LICENSE",
+      "file": "wasi-libc-LICENSE.txt",
+      "sha256": "2711a8b5a5cdfef0e639f96c1aca12ae23d7d64a02d0507f1bdf14d2b27bbc3a"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/LICENSE-APACHE-LLVM",
+      "file": "wasi-libc-LICENSE-APACHE-LLVM.txt",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/LICENSE-APACHE",
+      "file": "wasi-libc-LICENSE-APACHE.txt",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/LICENSE-MIT",
+      "file": "wasi-libc-LICENSE-MIT.txt",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/libc-bottom-half/cloudlibc/LICENSE",
+      "file": "wasi-libc-libc-bottom-half_cloudlibc_LICENSE.txt",
+      "sha256": "c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/libc-top-half/musl/COPYRIGHT",
+      "file": "wasi-libc-libc-top-half_musl_COPYRIGHT.txt",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/fts/musl-fts/COPYING",
+      "file": "wasi-libc-fts_musl-fts_COPYING.txt",
+      "sha256": "55af87e4017668f54467a3380e7ebbac5e672d8c763bfe95e6fc882a6fdc4046"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/emmalloc/emmalloc.c",
+      "byte_range": [
+        0,
+        1696
+      ],
+      "file": "wasi-libc-emmalloc-notice.txt",
+      "kind": "complete opening source notice; full external terms retained separately",
+      "sha256": "39dc3bb396a3fb991b80a5a243efc6449894420a20d0d9a283b41a5425de2ced",
+      "source_sha256": "c5b52c424c9101ba9b2d1338997e1758c9fdf369ab0450d9b72e9544fe482166"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-libc/161b3195fc2558d2b1ba3eb9ffae3b2b47407623/dlmalloc/src/malloc.c",
+      "byte_range": [
+        0,
+        28001
+      ],
+      "file": "wasi-libc-dlmalloc-notice.txt",
+      "kind": "complete opening source notice; full external terms retained separately",
+      "sha256": "4872c477338a576d7944d308b1d491afeb78408b9eca788468d5a1adae735553",
+      "source_sha256": "9e7ce51d813331ae87ef235f6ca2d5ce2167692e30bb51a173513e3754a67f8f"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/emscripten-core/emscripten/bc43482e65d0542493832c8ac2c77e837c8ecb1a/LICENSE",
+      "file": "wasi-emmalloc-emscripten-full.txt",
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/bytecodealliance/wasmtime/1fa72272d873cee796d7092ff99382dfb6ef0249/LICENSE",
+      "file": "wasmtime-Apache-LLVM.txt",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/spdx/license-list-data/31ba1a50e5397e00a304dbadc76531740e89ee48/text/CC0-1.0.txt",
+      "file": "CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/wasi-io/3983fe1feab6b3a3b4e5c47c8b13daaf22266f00/LICENSE.md",
+      "comparison_only": true,
+      "file": "wasi-WIT-Apache-LLVM.txt",
+      "sha256": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb"
+    },
+    {
+      "authority": "https://codeload.github.com/WebAssembly/wasi-io/tar.gz/refs/tags/v0.2.0 : LICENSE.md",
+      "file": "wasi-io-v0.2.0-LICENSE.md",
+      "scope": "exact retained WASI IO v0.2.0 specification notice / full linked agreement; not Apache-LLVM",
+      "sha256": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb"
+    },
+    {
+      "authority": "https://www.w3.org/community/about/agreements/cla/",
+      "file": "W3C-Community-CLA.html",
+      "scope": "Frozen full CLA linked by official WASI v0.2.0 umbrella notice and original IO notice; specification attribution and patent conditions preserved; not an Apache grant or non-specification-code license",
+      "sha256": "14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f"
+    },
+    {
+      "authority": "https://raw.githubusercontent.com/WebAssembly/WASI/70214b878af4ce45889b4ad9d26a7ac98db8931b/LICENSE.md",
+      "file": "wasi-v0.2.0-LICENSE.md",
+      "scope": "Official WASI Preview 2 specification v0.2.0 umbrella notice; exact 29 WIT definitions / 69 occurrences only; W3C Community CLA, not Apache-LLVM",
+      "sha256": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb"
+    }
+  ],
+  "wasi_vendor_files_sha256": {
+    "LICENSE.md": "0416590f3f47381bb5b9b467c27824d1228fac58b8031d693130865273ffefcb",
+    "UPSTREAM.json": "0785327c2999d49431b2e0450f3de04e6013c9c71799dff14ff0d0b133550f09",
+    "W3C-Community-CLA.html": "14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f",
+    "cli/wit/command.wit": "da467a3a1b7a1bf6d9ec10b5bc5cbb90ddbc912b34495e19c1d5fe6c5b130349",
+    "cli/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "cli/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "cli/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "cli/wit/deps/filesystem/preopens.wit": "872e66229d4d44c0ac97751720f396729c9464f1b628fc6bda3ed2079a82e6f1",
+    "cli/wit/deps/filesystem/types.wit": "f26dadcbcc7b231893c5f0094b729eabeb0643dca182697433fa8ab6ab786d20",
+    "cli/wit/deps/filesystem/world.wit": "9e1ffb6f850441124c4fe07bcede8cb3c4b6186f1dc020cb9189020b8a853c2b",
+    "cli/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "cli/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "cli/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "cli/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "cli/wit/deps/random/insecure-seed.wit": "9ebba944fef13d4db4a124519349ebf03febaff40f78f818d2c77c926281eb12",
+    "cli/wit/deps/random/insecure.wit": "28880bdfebda2f39f36f5fe5a1d20f6f1e76f1793ff6e973e34ff8cb4cdc633d",
+    "cli/wit/deps/random/random.wit": "b36eb876e39d3a0d63d6ca0c6fc4e84278ddc22c48173906645ed3dae3ef0c79",
+    "cli/wit/deps/random/world.wit": "7db07eadfefe2d2f042b5b7a283d5c5b8ab2a25276c352cfcc6cc9fd1a7b5fc7",
+    "cli/wit/deps/sockets/instance-network.wit": "ad100127c74b967064cf5d8e1770f6f0d787ef55f07ba9f6b334bc4c98c82282",
+    "cli/wit/deps/sockets/ip-name-lookup.wit": "fdfd3f54f7b82457c3b08b7c941c0a50a1fc15cdf23d692ccc5680eeb29313cd",
+    "cli/wit/deps/sockets/network.wit": "db6583f0e2425abbb7621a26716371983e9753ec1c44c580a888a603e74a8840",
+    "cli/wit/deps/sockets/tcp-create-socket.wit": "6a9175598eb628ee8a14989efa0ef4e3244aae1d339f1c882467c5c8226e02ef",
+    "cli/wit/deps/sockets/tcp.wit": "aa7a316ce0cfb8b42c0f592b5096d218da8ad75e7878f06329954e22040c3ee5",
+    "cli/wit/deps/sockets/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
+    "cli/wit/deps/sockets/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
+    "cli/wit/deps/sockets/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
+    "cli/wit/environment.wit": "8d4f13e628d2e8f029f6d668d8075db5e6c8867238c0436cc966dd9a535148e1",
+    "cli/wit/exit.wit": "337522eb41c89e660b1dabc1bae362acc462f9cbfdcb9546e790e371580175a2",
+    "cli/wit/imports.wit": "8cb6df9f4860399cac4640df6e9cb5eeea35ce70920a2f3fb631911311870bc0",
+    "cli/wit/run.wit": "50815a16aaebae4b99d2e2f9de69ddf30fc27249f41ad3cf477c4e796edf5792",
+    "cli/wit/stdio.wit": "6311ad8251ff4e0452c5be30ee70d9d6c41971c31e566dc1029d653182cd69fe",
+    "cli/wit/terminal.wit": "57b139fed58792c8dcac6cd74caf4baadda64f49b53181a999b5d6080694925c",
+    "clocks/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "clocks/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "clocks/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "clocks/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "clocks/wit/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "clocks/wit/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "clocks/wit/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "filesystem/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "filesystem/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "filesystem/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "filesystem/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "filesystem/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "filesystem/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "filesystem/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "filesystem/wit/preopens.wit": "872e66229d4d44c0ac97751720f396729c9464f1b628fc6bda3ed2079a82e6f1",
+    "filesystem/wit/types.wit": "f26dadcbcc7b231893c5f0094b729eabeb0643dca182697433fa8ab6ab786d20",
+    "filesystem/wit/world.wit": "9e1ffb6f850441124c4fe07bcede8cb3c4b6186f1dc020cb9189020b8a853c2b",
+    "io/wit/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "io/wit/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "io/wit/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "io/wit/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "random/wit/insecure-seed.wit": "9ebba944fef13d4db4a124519349ebf03febaff40f78f818d2c77c926281eb12",
+    "random/wit/insecure.wit": "28880bdfebda2f39f36f5fe5a1d20f6f1e76f1793ff6e973e34ff8cb4cdc633d",
+    "random/wit/random.wit": "b36eb876e39d3a0d63d6ca0c6fc4e84278ddc22c48173906645ed3dae3ef0c79",
+    "random/wit/world.wit": "7db07eadfefe2d2f042b5b7a283d5c5b8ab2a25276c352cfcc6cc9fd1a7b5fc7",
+    "sockets/wit/deps/clocks/monotonic-clock.wit": "2e974279ccee050c5ea32117f83cff50d1b3146763db2a60c3e8afeb774dad47",
+    "sockets/wit/deps/clocks/wall-clock.wit": "55b7978bad3fcf9b0886be4644834e8bf9e3553bba018d8fd9201482369cb6b8",
+    "sockets/wit/deps/clocks/world.wit": "015589355de95f274258599abf01290405b316d806bf2d97df0609077d970edf",
+    "sockets/wit/deps/io/error.wit": "5c0cb7d20bca9d98233f13076132081e5aa12bc825a823066ff27d4cea834a0c",
+    "sockets/wit/deps/io/poll.wit": "88e2b5c3f04e6f59a93136823403389f1df37f92df7fc32ebcc36af8b1b78bfe",
+    "sockets/wit/deps/io/streams.wit": "41204f72fd3568897f9f217fc4840cd8ccf117bd53cc4f53ea6eacc7712bf76f",
+    "sockets/wit/deps/io/world.wit": "358617cc366d0c4528571fc983acb9431a4516b7c8582d93930b54c80125bc1a",
+    "sockets/wit/instance-network.wit": "ad100127c74b967064cf5d8e1770f6f0d787ef55f07ba9f6b334bc4c98c82282",
+    "sockets/wit/ip-name-lookup.wit": "fdfd3f54f7b82457c3b08b7c941c0a50a1fc15cdf23d692ccc5680eeb29313cd",
+    "sockets/wit/network.wit": "db6583f0e2425abbb7621a26716371983e9753ec1c44c580a888a603e74a8840",
+    "sockets/wit/tcp-create-socket.wit": "6a9175598eb628ee8a14989efa0ef4e3244aae1d339f1c882467c5c8226e02ef",
+    "sockets/wit/tcp.wit": "aa7a316ce0cfb8b42c0f592b5096d218da8ad75e7878f06329954e22040c3ee5",
+    "sockets/wit/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
+    "sockets/wit/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
+    "sockets/wit/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12"
+  }
+}

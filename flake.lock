@@ -1,0 +1,81 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      }
+    },
+    "odin-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787840789,
+        "narHash": "sha256-y4vuR3l4xpZ1o0bkalDIEPLQZBsEyGK+10HFk2bGP0U=",
+        "owner": "odin-lang",
+        "repo": "Odin",
+        "rev": "db0cd79633fe05069dc4f9248d2796eb8ec3b858",
+        "type": "github"
+      },
+      "original": {
+        "owner": "odin-lang",
+        "repo": "Odin",
+        "rev": "db0cd79633fe05069dc4f9248d2796eb8ec3b858",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "odin-src": "odin-src",
+        "wasm-tools-src": "wasm-tools-src",
+        "wit-bindgen-src": "wit-bindgen-src"
+      }
+    },
+    "wasm-tools-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777393545,
+        "narHash": "sha256-dzt+cyHdFeBrk/hwLC153eJ12/IT0Z9PeUxZ07Smd0M=",
+        "owner": "bytecodealliance",
+        "repo": "wasm-tools",
+        "rev": "c523ab6ca42dcd5d8da2976bf4ba8905007a0c2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bytecodealliance",
+        "ref": "v1.248.0",
+        "repo": "wasm-tools",
+        "type": "github"
+      }
+    },
+    "wit-bindgen-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776447159,
+        "narHash": "sha256-i/SjZPemfs3bxAUVVU0YDZ3Pa+oH38iRTu9/LgWArco=",
+        "owner": "bytecodealliance",
+        "repo": "wit-bindgen",
+        "rev": "2e00369a643c0c8048b8636401e36b0cbf2dfb05",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bytecodealliance",
+        "ref": "v0.57.1",
+        "repo": "wit-bindgen",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

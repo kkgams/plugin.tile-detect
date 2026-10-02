@@ -1,0 +1,14 @@
+{
+  "legal": {
+    "evidence_sha256": "29a0ab9bfff514576750cf5aa14220dff8fff4639395d03b7a6c2b5dfeac0998",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "notice_sha256": "79fc21c8601f2de86269e2f8ce45c7dc21a10155d73715fdc74891639bef5560",
+    "permission_blockers": [],
+    "status": "bounded source review; owner digest/artifact approval pending"
+  },
+  "monorepo_revision": "a2f939f22b8814950ff066abf245ab5d9da40e42",
+  "preparation": "Source prepared and reviewed; no hosted Linux or graphical validation claimed.",
+  "repository": "plugin.tile-detect",
+  "schema": 1,
+  "source_snapshot": "Working-tree byte snapshot; exact source origins/adaptations in NOTICE-EVIDENCE.json."
+}

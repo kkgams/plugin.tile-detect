@@ -1,0 +1,13 @@
+{
+  "name": "plugin.tile-detect",
+  "slug": "tile-detect",
+  "source": "tile-detect",
+  "world": "tile-detect-plugin",
+  "binding": null,
+  "members": [
+    "tile-detect"
+  ],
+  "artifacts": [
+    "plugin.tile-detect.wasm"
+  ]
+}

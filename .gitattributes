@@ -1,0 +1,4 @@
+# Source/legal evidence is byte-bound; never normalize copied upstream bytes.
+* -text
+LICENSES/** -whitespace
+third_party/** -whitespace

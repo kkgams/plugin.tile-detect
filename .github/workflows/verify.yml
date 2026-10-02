@@ -1,0 +1,28 @@
+name: Verify standalone plugin
+on:
+  push:
+    branches: ['**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: DeterminateSystems/nix-installer-action@ef8a148080ab6020fd15196c2084a2eea5ff2d25
+      - run: nix develop --command make test
+      - name: Source-bound digest-approved candidate only
+        if: github.event_name == 'push' && github.ref == 'refs/heads/release' && (vars.LICENSE_SHA256 != '' || vars.NOTICE_SHA256 != '')
+        env:
+          APPROVED_LICENSE_SHA256: ${{ vars.LICENSE_SHA256 }}
+          APPROVED_NOTICE_SHA256: ${{ vars.NOTICE_SHA256 }}
+        run: |
+          test "$GITHUB_REPOSITORY" = "kkgams/$(python3 -c 'import json; print(json.load(open("component.json"))["name"])')"
+          nix develop --command make release-candidate
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: github.event_name == 'push' && github.ref == 'refs/heads/release' && (vars.LICENSE_SHA256 != '' || vars.NOTICE_SHA256 != '')
+        with:
+          name: reviewed-candidate-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error

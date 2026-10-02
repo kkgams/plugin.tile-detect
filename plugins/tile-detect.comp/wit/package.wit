@@ -1,0 +1,79 @@
+package gams:tile-detect@1.0.0;
+
+interface tile-detect {
+    type data-entry = tuple<string, string>;
+
+    record detect-size-output {
+        tile-w: u32,
+        tile-h: u32,
+        confidence: f64,
+    }
+
+    record extract-config {
+        source-data: list<u8>,
+        tile-w: u32,
+        tile-h: u32,
+        tolerance: u32,
+        skip-nth-pixel: u32,
+    }
+
+    record tile-bank-entry {
+        id: u32,
+        source-index: u32,
+        hash: u64,
+    }
+
+    record tilemap-data {
+        width: u32,
+        height: u32,
+        tile-w: u32,
+        tile-h: u32,
+        data: list<u32>,
+    }
+
+    record extract-output {
+        tilebank: list<tile-bank-entry>,
+        tilemap: tilemap-data,
+    }
+
+    record export-tileset-config {
+        tilebank: list<tile-bank-entry>,
+        source-data: list<u8>,
+        source-cols: u32,
+        tile-w: u32,
+        tile-h: u32,
+    }
+
+    record export-tileset-output {
+        data: list<u8>,
+        width: u32,
+        height: u32,
+        cols: u32,
+        rows: u32,
+    }
+
+    record tile-layer {
+        width: u32,
+        data: list<u32>,
+        props: list<data-entry>,
+    }
+
+    record tile-map {
+        layers: list<tile-layer>,
+        props: list<data-entry>,
+    }
+
+    detect-size: func(source-data: list<u8>, min-size: u32, max-size: u32) -> result<detect-size-output, string>;
+
+    extract: func(config: extract-config) -> result<extract-output, string>;
+
+    export-tileset: func(config: export-tileset-config) -> result<export-tileset-output, string>;
+
+    to-tilemap: func(extract-output: extract-output) -> result<tile-map, string>;
+}
+
+world tile-detect-plugin {
+    include wasi:cli/imports@0.2.0;
+
+    export tile-detect;
+}

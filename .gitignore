@@ -1,0 +1,9 @@
+/build/
+/dist/
+/node_modules/
+**/internal/
+*.wasm
+*.o
+*.obj
+.DS_Store
+__pycache__/

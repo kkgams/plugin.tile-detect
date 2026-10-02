@@ -1,0 +1,14 @@
+{
+  "name": "@gams/component",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@bytecodealliance/jco": "1.32.1"
+  },
+  "overrides": {
+    "@bytecodealliance/weval": {
+      "decompress": "npm:@xhmikosr/decompress@11.1.4"
+    }
+  }
+}
