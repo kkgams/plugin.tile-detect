@@ -230,7 +230,7 @@
     "third_party/wasi-0.2.0/sockets/wit/udp-create-socket.wit": "058da3ade225a22ae9f7329453a51cf55174f3253b7a4163d10bc46bc7c53b85",
     "third_party/wasi-0.2.0/sockets/wit/udp.wit": "411998b320d08fce10400c840f0ca0ebef49c5a4fb13f94011bbce2bbd5972fc",
     "third_party/wasi-0.2.0/sockets/wit/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
-    "version.txt": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    "version.txt": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
   },
   "findings": [
     "QOI C: Dominic Szablewski (2021), MIT. Copied Go QOI names Xavier-Fr\u00e9d\u00e9ric Moulet; full independent upstream MIT text retained even when the helper is source-distributed but not linked. No assertion of an original port revision.",
