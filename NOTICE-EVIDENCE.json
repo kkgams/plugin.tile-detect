@@ -34,13 +34,44 @@
       "dist/plugin.tile-detect.wasm": "plugins/tile-detect.comp.wasm"
     }
   },
+  "documentation_cleanup": {
+    "audit_origin": "audit_generator_sha256 and audit_input_sha256 identify the preserved historical audit; that generator was not rerun for this delta",
+    "baseline_commit": "96d8afd77475ca20dfd464e86b97c5ea7e1b0aeb",
+    "changed_inputs": {
+      "README.md": {
+        "after": "1017f6330445863629c793366ffa7cf9e2a7316e0361631337c11b7d9857127a",
+        "before": "c0b051c43a612395eaf39937613138bf63bf52fec2ca98d78eb546aa22558c18"
+      },
+      "SOURCE-INPUTS.json": {
+        "after": "1843edd0f4f053f8aef25f6209df7dd227497390be7ba9b746aee6fd6ebe837e",
+        "before": "dd504607376c431ecf43e8d293d0af22ecfe8060eaf8e2f55f2bfa16cbb88e98"
+      },
+      "scripts/build.py": {
+        "after": "883e0420eb90e6d297a8b4346bf2bc96894d3e3b690381fd7df4b07685e72e3a",
+        "before": "40e1ddf6e4bdda34d4456411bcbfa0850a2905b467d4a1ca7448cee634be396d"
+      },
+      "scripts/publication.py": {
+        "after": "058cdb64ab19ec1db7650531b2910ddb6c465764c888d208b683b14c87fcd2ad",
+        "before": "f4c97f3a84c866942e7427392d156144aff53f35e4149c2def3c171368bd8391"
+      }
+    },
+    "previous_evidence_sha256": "9e3089422b71c06c2de40fff65fa465141cc48e8e2b2d4670ca03ea9307b445b",
+    "previous_notice_sha256": "0dc3f2eaaed1163e5124585e75deac1532662be8433b561c087177608ce8a522",
+    "previous_source_inputs_sha256": "dd504607376c431ecf43e8d293d0af22ecfe8060eaf8e2f55f2bfa16cbb88e98",
+    "publication_approval": "not granted; review and approve the new NOTICE digest and final hosted candidate before publication",
+    "refresh_script_sha256": "dc16c61a8eb63b586cf128a8f2309de9c530689867406ce8ffc14d98387f7983",
+    "removed_documents": {
+      "CONTEXT.md": "210b744a4ea2dd5f73f87d1f7b4c9c7bcdc79c26d9f7dd41310d6482f9140fde",
+      "PREPARATION.md": "bbe0fe0dad19ce239966fe7695cb69494220002357767ab0234f266a5682716e"
+    },
+    "rule": "Only documentation removal/rewrite, documentation-reference strings, and exact input-manifest refresh. Third-party source, terms, NOTICE body, toolchains, tests, and verification rules are unchanged."
+  },
   "files_sha256": {
     ".envrc": "1d26c74fd25a4c3dbb09e029fc609588da499fd4af2a41c88f6316c7f8c54cf1",
     ".gitattributes": "02a00a5e791aceec9288ce23f6ccdd26fb5356bc6da5f926c1866c1b906d1d8e",
     ".github/workflows/release.yml": "5b57d05928f471eb1ef792ae9be6aab02aaf70e557be0c62433c88cdd9080479",
     ".github/workflows/verify.yml": "ec66e6d7ccc76ebd1f77f725f5be0b83f783ff0efbbf4655658146a99ddc470b",
     ".gitignore": "35d5cf3e93f7c09e8bf44231a378d77943e69e97b4f5dc266e14053e1c45d541",
-    "CONTEXT.md": "210b744a4ea2dd5f73f87d1f7b4c9c7bcdc79c26d9f7dd41310d6482f9140fde",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "LICENSES/CC0-1.0.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
     "LICENSES/W3C-Community-CLA.html": "14e40793d59248a0af6ecf2b6e9f705e4a950a21fe4c3365e4b5fa319df4e15f",
@@ -93,9 +124,8 @@
     "LICENSES/wit-bindgen-MIT.txt": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
     "LICENSING.md": "9c90a7d909f589c226e600b2cd66f551d7769ba9de2b67fc2ee5e9d751de256e",
     "Makefile": "bebe6c97ccd2d043a593ba5e1a2b27a0c4ff036f2ece06745806deead7d257bf",
-    "PREPARATION.md": "bbe0fe0dad19ce239966fe7695cb69494220002357767ab0234f266a5682716e",
-    "README.md": "c0b051c43a612395eaf39937613138bf63bf52fec2ca98d78eb546aa22558c18",
-    "SOURCE-INPUTS.json": "dd504607376c431ecf43e8d293d0af22ecfe8060eaf8e2f55f2bfa16cbb88e98",
+    "README.md": "1017f6330445863629c793366ffa7cf9e2a7316e0361631337c11b7d9857127a",
+    "SOURCE-INPUTS.json": "1843edd0f4f053f8aef25f6209df7dd227497390be7ba9b746aee6fd6ebe837e",
     "THIRD-PARTY-REVIEW.md": "3dcd4375ae57b38be3caed68c9bc4bbc5da12ec2070a45fa2416ba435a4cc86f",
     "THIRD-PARTY-SOURCE.json": "40d4f1fce39c59ebb5995356382c8e3ce323ebc7c5b715a4d33c63b14d1b7ce4",
     "component.json": "50bf80b8623c15b4d74113d096379e5d85aad8ef097035b5808f59f5ff817115",
@@ -138,7 +168,7 @@
     "plugins/tile-detect.comp/wit/deps/sockets/world.wit": "9281c12b9611117e98674eb3f00bd9c4eb2e49f1386f0d6173b9c88181180d12",
     "plugins/tile-detect.comp/wit/package.wit": "bff1d13834059a9ace93767deb58b57e90afae12288b37a3e0e40a2f4734b06b",
     "plugins/tile-detect.comp/wkg.lock": "d53ecb77415704bdf668a04fe15689fa3b7f8cd8e8e7995b7943ff11341bbf5a",
-    "scripts/build.py": "40e1ddf6e4bdda34d4456411bcbfa0850a2905b467d4a1ca7448cee634be396d",
+    "scripts/build.py": "883e0420eb90e6d297a8b4346bf2bc96894d3e3b690381fd7df4b07685e72e3a",
     "scripts/candidate.py": "a75a8b1aec7af8e1ef5a78885d65945b848af5e5082a0323d952e89c43fe2f71",
     "scripts/check-licensing-digests.sh": "0dfa34f834af2e065e8cbf325cc8eaf2beaf6dc60093f802466799c48d59ff21",
     "scripts/check-release-absent.sh": "b25a4c19ea5a79f6e6f7b2afe459d127ec13dfadb1d28a2c7cf820ed127250ee",
@@ -146,7 +176,7 @@
     "scripts/check-source.py": "b4bff79c8d7d13ea121d9e18a921084c0e076474a631de8c430701873440a72c",
     "scripts/inputs.py": "c61e7cd875d429d623d083da40c65639b2b311cb1a046bad5316efa1229e71d7",
     "scripts/legal.py": "6e9633f143a4cc609c676c68541b5238fdc85c1454bdc898fc6367dc29f331f0",
-    "scripts/publication.py": "f4c97f3a84c866942e7427392d156144aff53f35e4149c2def3c171368bd8391",
+    "scripts/publication.py": "058cdb64ab19ec1db7650531b2910ddb6c465764c888d208b683b14c87fcd2ad",
     "scripts/tooling.py": "d98e1f61e60ee1d600a23d719a3637d2cc8b5249e37c890180528b3223b5ea34",
     "scripts/wasm-notices.py": "91d94800f753ae948e9289393da9b6b63f6dc24e154a41fbdae2fd59f9305d85",
     "sdk/go.mod": "8331394324db51145a124ebc4ae7176cd6fc85a192133dd092025bfffb4633cd",
@@ -357,7 +387,7 @@
   },
   "repository": "plugin.tile-detect",
   "schema": 1,
-  "scope": "selected prepared repository/source inputs; no build executed",
+  "scope": "historical third-party source audit plus bounded documentation cleanup; no new build or audit executed",
   "shipped_host_source_files": [],
   "source_comparison_exclusions": {
     "directories": [

@@ -102,7 +102,7 @@ def test():
         for artifact in SPEC['artifacts']:
             run(ROOT / 'node_modules/.bin/jco', 'transpile', f'dist/{artifact}', '-o', f'build/jco/{artifact}', '--name', 'component')
         run('node', 'test/runtime.mjs')
-    print('PASS: build/validation + stated unit/runtime tests only; see PREPARATION.md for coverage gaps.')
+    print('PASS: build/validation + stated unit/runtime tests only; see README.md for coverage gaps.')
 
 
 if __name__ == '__main__':

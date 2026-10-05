@@ -81,7 +81,7 @@ def publish(root):
     expected = {p.name: p.read_bytes() for p in (root / 'dist').iterdir()}
     # create refuses preexisting tags/releases; never upload --clobber or repair.
     subprocess.run(['gh', 'release', 'create', tag, '--repo', repo, '--draft', '--verify-tag', '--latest=false',
-                    '--title', spec['name'] + ' ' + tag, '--notes', 'Source-bound reviewed candidate; see PREPARATION.md for coverage.',
+                    '--title', spec['name'] + ' ' + tag, '--notes', 'Source-bound reviewed candidate; see README.md for coverage.',
                     *[str(root / 'dist' / name) for name in expected]], check=True)
     # The tag endpoint is for published releases. Enumerate authenticated drafts
     # with pagination instead, and demand exactly the newly reserved release.
