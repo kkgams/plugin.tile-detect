@@ -40,21 +40,24 @@ tests are not WASM runtime tests; there is no standalone component runtime E2E.
 GAMS-authored contributions are Apache-2.0. Third-party code retains its own
 terms; see `LICENSING.md`, `THIRD-PARTY-REVIEW.md`, and `LICENSES/`.
 Source inventory and notice evidence are checked before candidate packaging.
-Changed inputs require refreshed evidence and review of the resulting digests;
-checksum consistency alone is not legal or publication approval.
+Changed inputs require refreshed exact evidence; checksum consistency alone is
+not legal approval. On 2026-10-12 the owner confirmed licensing/checksums were
+already prepared and removed pending manual checksum, license, and hosted-review
+approvals for 0.2.1, authorizing local commits and annotated tags. This does not
+claim hosted tests, final artifact review, or missing runtime coverage passed.
 
 Distribution is through GitHub Releases, not npm or OCI. Before publishing:
 
-1. Review the current source, third-party evidence, and final linked artifact.
-   Hosted build/candidate review and runtime validation remain outstanding until
-   independently recorded; preparation or local tests do not clear them.
+1. Preserve exact source and third-party evidence. Manual reviews were waived
+   by the owner for 0.2.1; hosted execution remains unverified, not a manual
+   approval blocker. Enforced build and publication checks still must pass.
 2. Set repository-scoped `LICENSE_SHA256` and `NOTICE_SHA256` Actions variables
-   to the exact reviewed texts. Local rehearsal uses
+   to the exact authorized texts. Local rehearsal uses
    `APPROVED_LICENSE_SHA256` and `APPROVED_NOTICE_SHA256`.
-3. Push the reviewed `release` branch and inspect its hosted candidate. Without
+3. Push the authorized `release` branch and verify its hosted candidate. Without
    approved digests, branch checks do not distribute a candidate. Manual release
    workflow dispatch verifies but does not publish.
-4. Tag that reviewed release-branch commit as `v<version.txt>`. Never reuse or
+4. Tag the authorized release-branch commit as `v<version.txt>`. Never reuse or
    move a published or failed tag. Publication requires immutable-release policy,
    canonical repository/version identity, exact artifacts and checksums, embedded
    notices, and complete readable legal assets. An existing release blocks creation.
