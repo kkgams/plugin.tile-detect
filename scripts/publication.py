@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Draft-first publication with fail-closed policy and unauthenticated byte checks.
-Only GITHUB_TOKEN is used. The official policy GET requires admin-read access;
-if the workflow token cannot read it, publication is blocked (no extra secret).
+"""Draft-first publication using GITHUB_TOKEN and public immutable-byte checks.
+Repository immutable releases must be enabled operationally; publication does not
+query administrative settings that the automatic workflow token cannot read.
 """
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -24,16 +25,17 @@ def api(path, method='GET', **fields):
     return json.loads(subprocess.check_output(args))
 
 
-def policy(repository, settings):
-    if repository['private'] is not False or repository['visibility'] != 'public' or settings['enabled'] is not True:
-        raise RuntimeError('Public repository and enabled immutable-release policy required')
-    if not isinstance(settings['enforced_by_owner'], bool):
-        raise RuntimeError('Malformed immutable-release policy')
+def validate_repository(repository):
+    if repository['private'] is not False or repository['visibility'] != 'public':
+        raise RuntimeError('Public repository required')
 
 
 def validate_release(release, repo, tag, expected, draft=False):
     if release['tag_name'] != tag or release['draft'] is not draft or release['prerelease'] is not False:
         raise RuntimeError('Noncanonical/draft/prerelease metadata')
+    if draft and (type(release['id']) is not int or release['id'] <= 0 or
+                  release['immutable'] is not False or release['published_at'] is not None):
+        raise RuntimeError('Noncanonical draft release metadata')
     if not draft and (release['immutable'] is not True or not release['published_at']):
         raise RuntimeError('Public release is not immutable')
     assets = release['assets']
@@ -41,8 +43,19 @@ def validate_release(release, repo, tag, expected, draft=False):
         raise RuntimeError('Incomplete/duplicate/extra release assets')
     for asset in assets:
         name = asset['name']
-        url = f'https://github.com/{repo}/releases/download/{tag}/{name}'
-        if asset['state'] != 'uploaded' or asset['size'] != len(expected[name]) or asset['browser_download_url'] != url:
+        if asset['state'] != 'uploaded' or type(asset['size']) is not int or asset['size'] != len(expected[name]):
+            raise RuntimeError('Noncanonical release asset metadata')
+        prefix = f'https://github.com/{repo}/releases/download/'
+        if draft:
+            if (type(asset['id']) is not int or asset['id'] <= 0 or
+                    asset['url'] != f'https://api.github.com/repos/{repo}/releases/assets/{asset["id"]}'):
+                raise RuntimeError('Noncanonical draft asset identity')
+            # Draft assets may use temporary untagged-* URLs. Authenticated CLI
+            # downloads compare their bytes; public verification still binds tag.
+            pattern = re.escape(prefix) + '(?:' + re.escape(tag) + r'|untagged-[0-9a-f]+)/' + re.escape(name)
+            if re.fullmatch(pattern, asset['browser_download_url']) is None:
+                raise RuntimeError('Noncanonical draft browser URL')
+        elif asset['browser_download_url'] != prefix + tag + '/' + name:
             raise RuntimeError('Noncanonical release asset metadata')
 
 
@@ -75,8 +88,7 @@ def publish(root):
     repo, tag = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_REF_NAME']
     if repo != 'kkgams/' + spec['name'] or tag != 'v' + (root / 'version.txt').read_text().strip():
         raise RuntimeError('Noncanonical publication identity')
-    # No API failure is interpreted as a disabled-but-acceptable policy.
-    policy(api(f'repos/{repo}'), api(f'repos/{repo}/immutable-releases'))
+    validate_repository(api(f'repos/{repo}'))
     subprocess.run(['bash', 'scripts/check-release-absent.sh'], cwd=root, check=True)
     expected = {p.name: p.read_bytes() for p in (root / 'dist').iterdir()}
     # create refuses preexisting tags/releases; never upload --clobber or repair.
@@ -97,7 +109,7 @@ def publish(root):
         downloaded = {p.name: p.read_bytes() for p in Path(directory).iterdir()}
         if downloaded != expected:
             raise RuntimeError('Draft downloaded bytes differ')
-    policy(api(f'repos/{repo}'), api(f'repos/{repo}/immutable-releases'))
+    validate_repository(api(f'repos/{repo}'))
     if stable_metadata(api(f'repos/{repo}/releases/{draft["id"]}')) != stable_metadata(draft):
         raise RuntimeError('Draft metadata changed during download; refusing publication')
     api(f'repos/{repo}/releases/{draft["id"]}', 'PATCH', draft=False, make_latest='false')

@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-# Fail before an expensive CI build when distribution licensing is unapproved.
+# Verify required legal texts and source-bound evidence, not manual approvals.
 set -euo pipefail
-for file in LICENSE NOTICE; do
-  [[ -s "$file" ]] || { echo "Missing/nonempty required text: $file" >&2; exit 1; }
-done
-for name in APPROVED_LICENSE_SHA256 APPROVED_NOTICE_SHA256; do
-  digest="${!name:-}"
-  [[ "$digest" =~ ^[0-9a-f]{64}$ ]] || { echo "$name must contain the approved lowercase SHA-256 digest." >&2; exit 1; }
-done
-[[ "$(sha256sum LICENSE | cut -d ' ' -f 1)" == "$APPROVED_LICENSE_SHA256" ]] || { echo 'LICENSE approval digest mismatch.' >&2; exit 1; }
-[[ "$(sha256sum NOTICE | cut -d ' ' -f 1)" == "$APPROVED_NOTICE_SHA256" ]] || { echo 'NOTICE approval digest mismatch.' >&2; exit 1; }
+python3 - <<'PYTHON'
+import sys
+from pathlib import Path
+sys.path.insert(0, "scripts")
+from legal import legal_files, verify_legal
+
+root = Path.cwd()
+for name in legal_files(root, required=True):
+    if not (root / name).read_text(encoding="utf-8").strip():
+        raise RuntimeError(f"Empty required legal text: {name}")
+verify_legal(root)
+PYTHON

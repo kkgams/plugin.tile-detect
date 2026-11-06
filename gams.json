@@ -1,0 +1,59 @@
+{
+  "plugins": [
+    "https://github.com/kkgams/plugin.fs/releases/download/v0.2.0/plugin.fs.wasm",
+    "https://github.com/kkgams/plugin.layout/releases/download/v0.2.0/plugin.layout.wasm",
+    "dist/plugin.tile-detect.wasm"
+  ],
+  "ui": {
+    "keys": [],
+    "theme": {
+      "url": "https://github.com/kkgams/theme.the98/releases/download/v0.2.6/theme.the98-0.2.6.zip#themes/the98.css"
+    },
+    "services": {
+      "ui-context": {
+        "url": "https://github.com/kkgams/ui-service.context/releases/download/v0.2.0/ui-service.context-0.2.0.zip#ui-plugins/context.js"
+      },
+      "ui-keys": {
+        "url": "https://github.com/kkgams/ui-service.keys/releases/download/v0.2.0/ui-service.keys-0.2.0.zip#ui-plugins/keys.js"
+      },
+      "ui-toast": {
+        "url": "https://github.com/kkgams/ui-service.toast/releases/download/v0.2.0/ui-service.toast-0.2.0.zip#ui-plugins/toast.js"
+      },
+      "ui-popup": {
+        "url": "https://github.com/kkgams/ui-service.popup/releases/download/v0.2.0/ui-service.popup-0.2.0.zip#ui-plugins/popup.js"
+      },
+      "ui-tooltip": {
+        "url": "https://github.com/kkgams/ui-service.tooltip/releases/download/v0.2.0/ui-service.tooltip-0.2.0.zip#ui-plugins/tooltip.js"
+      },
+      "ui-layout": {
+        "url": "https://github.com/kkgams/ui-service.layout/releases/download/v0.2.0/ui-service.layout-0.2.0.zip#ui-plugins/layout.js",
+        "config": {
+          "layout": "<view-files />"
+        }
+      }
+    },
+    "views": {
+      "view-files": {
+        "url": "https://github.com/kkgams/view.files/releases/download/v1.0.0/view.files-1.0.0.zip#views/view-files.js",
+        "label": "Files",
+        "group": "Project",
+        "internal": false,
+        "config": {
+          "open": {
+            "default": "files-default"
+          }
+        }
+      },
+      "files-rename": {
+        "url": "https://github.com/kkgams/view.files/releases/download/v1.0.0/view.files-1.0.0.zip#views/files-rename.js",
+        "label": "Rename File",
+        "internal": true
+      },
+      "files-default": {
+        "url": "https://github.com/kkgams/view.files/releases/download/v1.0.0/view.files-1.0.0.zip#views/files-default.js",
+        "label": "File Info",
+        "internal": true
+      }
+    }
+  }
+}

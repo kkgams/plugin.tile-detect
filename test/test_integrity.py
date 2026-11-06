@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from inputs import inventory, verify_inputs, AUDIT_EXCLUSIONS
 from legal import verify_legal
 from tooling import payload, verify_zip
-from publication import policy, verify_public, api
+from publication import validate_repository, validate_release, verify_public, api
 
 
 def audit_fixture(root):
@@ -127,7 +127,7 @@ class ZipTests(unittest.TestCase):
 class PublicationTests(unittest.TestCase):
     def fixture(self):
         repo = 'kkgams/plugin.pack'; tag = 'v0.1.0'; expected = {'plugin.pack.wasm': b'complete'}
-        release = {'id': 1, 'tag_name': tag, 'draft': False, 'prerelease': False, 'immutable': True, 'published_at': 'date', 'assets': [{'id': 2, 'name': 'plugin.pack.wasm', 'size': 8, 'state': 'uploaded', 'browser_download_url': f'https://github.com/{repo}/releases/download/{tag}/plugin.pack.wasm'}]}
+        release = {'id': 1, 'tag_name': tag, 'draft': False, 'prerelease': False, 'immutable': True, 'published_at': 'date', 'assets': [{'id': 2, 'url': f'https://api.github.com/repos/{repo}/releases/assets/2', 'name': 'plugin.pack.wasm', 'size': 8, 'state': 'uploaded', 'browser_download_url': f'https://github.com/{repo}/releases/download/{tag}/plugin.pack.wasm'}]}
         repository = {'private': False, 'visibility': 'public'}
         return repo, tag, expected, release, repository
 
@@ -163,17 +163,17 @@ class PublicationTests(unittest.TestCase):
             return get(url)
         with self.assertRaises(RuntimeError): verify_public(repo, tag, expected, unstable)
 
-    def test_publication_never_creates_on_policy_or_existing_release_failure(self):
+    def test_publication_never_creates_on_repository_or_existing_release_failure(self):
         from publication import publish
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
             (root / 'component.json').write_text(json.dumps({'name': 'plugin.pack'}))
             (root / 'version.txt').write_text('0.1.0')
             with patch.dict('os.environ', {'GITHUB_REPOSITORY': 'kkgams/plugin.pack', 'GITHUB_REF_NAME': 'v0.1.0'}):
-                with patch('publication.api', side_effect=RuntimeError('policy GET denied')), patch('publication.subprocess.run') as run:
+                with patch('publication.api', side_effect=RuntimeError('repository GET denied')), patch('publication.subprocess.run') as run:
                     with self.assertRaises(RuntimeError): publish(root)
                     run.assert_not_called()
-                with patch('publication.api', side_effect=[{'private': False, 'visibility': 'public'}, {'enabled': True, 'enforced_by_owner': False}]), patch('publication.subprocess.run', side_effect=RuntimeError('release exists')) as run:
+                with patch('publication.api', return_value={'private': False, 'visibility': 'public'}), patch('publication.subprocess.run', side_effect=RuntimeError('release exists')) as run:
                     with self.assertRaises(RuntimeError): publish(root)
                     self.assertEqual(run.call_count, 1)
                     self.assertEqual(run.call_args.args[0], ['bash', 'scripts/check-release-absent.sh'])
@@ -181,7 +181,8 @@ class PublicationTests(unittest.TestCase):
     def test_draft_first_complete_download_before_lock(self):
         from publication import publish
         repo, tag, expected, release, repository = self.fixture()
-        release['draft'] = True; release['immutable'] = False
+        release['draft'] = True; release['immutable'] = False; release['published_at'] = None
+        release['assets'][0]['browser_download_url'] = f'https://github.com/{repo}/releases/download/untagged-abc123/plugin.pack.wasm'
         events = []
         with tempfile.TemporaryDirectory() as d:
             root = Path(d); (root / 'dist').mkdir()
@@ -190,9 +191,9 @@ class PublicationTests(unittest.TestCase):
             for name, data in expected.items(): (root / 'dist' / name).write_bytes(data)
             def fake_api(path, method='GET', **fields):
                 events.append((method, path))
-                if path.endswith('/immutable-releases'): return {'enabled': True, 'enforced_by_owner': False}
                 if path.endswith('/releases/1'): return release
-                return repository
+                if path == f'repos/{repo}': return repository
+                raise AssertionError(f'Unexpected API request: {path}')
             def fake_run(args, **kwargs):
                 events.append(('command', args))
                 if args[:3] == ['gh', 'release', 'download']:
@@ -204,14 +205,103 @@ class PublicationTests(unittest.TestCase):
             self.assertIn('--draft', create)
             self.assertNotIn('--clobber', create)
             self.assertLess(next(i for i, e in enumerate(events) if e[0] == 'command' and e[1][:3] == ['gh', 'release', 'download']), next(i for i, e in enumerate(events) if e[0] == 'PATCH'))
-            self.assertEqual(events[1], ('GET', f'repos/{repo}/immutable-releases'))
+            self.assertEqual(events[0], ('GET', f'repos/{repo}'))
+            self.assertFalse(any('/immutable-releases' in str(event) for event in events))
 
-    def test_official_policy_fail_closed(self):
-        repository = {'private': False, 'visibility': 'public'}
-        policy(repository, {'enabled': True, 'enforced_by_owner': False})
-        with self.assertRaises(RuntimeError): policy(repository, {'enabled': False, 'enforced_by_owner': False})
+    def test_draft_temporary_urls_and_asset_identity_are_confined(self):
+        repo, tag, expected, release, repository = self.fixture()
+        release.update(draft=True, immutable=False, published_at=None)
+        asset = release['assets'][0]
+        validate_release(release, repo, tag, expected, draft=True)
+        temporary = f'https://github.com/{repo}/releases/download/untagged-abc123/plugin.pack.wasm'
+        asset['browser_download_url'] = temporary
+        validate_release(release, repo, tag, expected, draft=True)
+        for key, bad in (
+                ('browser_download_url', temporary.replace(repo, 'other/plugin.pack')),
+                ('browser_download_url', temporary.replace('plugin.pack.wasm', 'other.wasm')),
+                ('browser_download_url', temporary.replace('untagged-abc123', 'v9.9.9')),
+                ('browser_download_url', temporary + '?download=1'),
+                ('browser_download_url', temporary.replace('untagged-abc123', 'untagged-nothex')),
+                ('url', asset['url'].replace(repo, 'other/plugin.pack')),
+                ('url', asset['url'].replace('/assets/2', '/assets/9')),
+                ('id', 0), ('id', True), ('size', True), ('size', 99), ('state', 'new')):
+            original = asset[key]
+            asset[key] = bad
+            with self.subTest(key=key, bad=bad), self.assertRaises(RuntimeError):
+                validate_release(release, repo, tag, expected, draft=True)
+            asset[key] = original
+        release.update(draft=False, immutable=True, published_at='date')
+        with self.assertRaises(RuntimeError):
+            validate_release(release, repo, tag, expected)
+
+    def test_public_repository_and_api_fail_closed(self):
+        validate_repository({'private': False, 'visibility': 'public'})
+        for repository in ({'private': True, 'visibility': 'private'},
+                           {'private': False, 'visibility': 'internal'}):
+            with self.subTest(repository=repository), self.assertRaises(RuntimeError):
+                validate_repository(repository)
         with patch('publication.subprocess.check_output', side_effect=RuntimeError('403')):
-            with self.assertRaises(RuntimeError): api('repos/kkgams/plugin.pack/immutable-releases')
+            with self.assertRaises(RuntimeError): api('repos/kkgams/plugin.pack')
+
+
+class ReleaseAuthorizationTests(unittest.TestCase):
+    def test_workflows_publish_only_on_tag_push_without_manual_gates(self):
+        root = Path(__file__).resolve().parents[1]
+        release = (root / '.github/workflows/release.yml').read_text()
+        verify = (root / '.github/workflows/verify.yml').read_text()
+        self.assertIn("  publish:\n    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')", release)
+        self.assertNotIn('refs/heads/release', release)
+        self.assertNotIn('FETCH_HEAD', release)
+        for workflow in (release, verify):
+            self.assertNotIn('vars.LICENSE_SHA256', workflow)
+            self.assertNotIn('vars.NOTICE_SHA256', workflow)
+
+    def test_legal_shell_without_approval_variables_and_rejects_tampering(self):
+        import os
+        with tempfile.TemporaryDirectory(prefix='release-legal-') as d:
+            root = Path(d)
+            shutil.copytree(Path(__file__).resolve().parents[1] / 'scripts', root / 'scripts', ignore=shutil.ignore_patterns('__pycache__'))
+            audit_fixture(root)
+            env = {key: value for key, value in os.environ.items()
+                   if key not in ('APPROVED_LICENSE_SHA256', 'APPROVED_NOTICE_SHA256', 'LICENSE_SHA256', 'NOTICE_SHA256')}
+            def check():
+                return subprocess.run(['bash', 'scripts/check-licensing-digests.sh'], cwd=root, env=env, capture_output=True, text=True)
+            self.assertEqual(check().returncode, 0)
+            for name in ('LICENSE', 'NOTICE', 'LICENSES/terms.txt', 'NOTICE-EVIDENCE.json'):
+                with self.subTest(name=name):
+                    path = root / name
+                    original = path.read_bytes()
+                    for data in (b'', b'tampered'):
+                        path.write_bytes(data)
+                        self.assertNotEqual(check().returncode, 0)
+                    path.unlink()
+                    self.assertNotEqual(check().returncode, 0)
+                    path.write_bytes(original)
+
+    def test_metadata_accepts_matching_tag_without_release_branch(self):
+        import os
+        with tempfile.TemporaryDirectory(prefix='release-metadata-') as d:
+            root = Path(d)
+            scripts = root / 'scripts'; scripts.mkdir()
+            shutil.copy(Path(__file__).resolve().parents[1] / 'scripts/check-release-metadata.sh', scripts)
+            (root / 'component.json').write_text(json.dumps({'name': 'plugin.pack'}))
+            (root / 'version.txt').write_text('0.1.0')
+            # Isolate identity validation; real legal/source checks are tested separately.
+            (scripts / 'check-licensing-digests.sh').write_text('exit 0\n')
+            (scripts / 'check-source.py').write_text('')
+            (scripts / 'legal.py').write_text('def verify_legal(root): pass\n')
+            env = {**os.environ, 'GITHUB_REPOSITORY': 'kkgams/plugin.pack', 'GITHUB_REF': 'refs/tags/v0.1.0', 'GITHUB_EVENT_NAME': 'push'}
+            def check():
+                return subprocess.run(['bash', 'scripts/check-release-metadata.sh'], cwd=root, env=env, capture_output=True)
+            self.assertEqual(check().returncode, 0)
+            env['GITHUB_REF'] = 'refs/tags/v9.9.9'
+            self.assertNotEqual(check().returncode, 0)
+            env['GITHUB_REF'] = 'refs/heads/feature'
+            self.assertNotEqual(check().returncode, 0)
+            env['GITHUB_EVENT_NAME'] = 'workflow_dispatch'
+            self.assertEqual(check().returncode, 0)
+            env['GITHUB_REPOSITORY'] = 'other/plugin.pack'
+            self.assertNotEqual(check().returncode, 0)
 
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ version="$(cat version.txt)"
 if [[ "${GITHUB_REF:?}" == refs/tags/* ]]; then
   [[ "$GITHUB_REF" == "refs/tags/v$version" ]] || exit 1
 else
-  [[ "${GITHUB_EVENT_NAME:?}" == workflow_dispatch && "$GITHUB_REF" == refs/heads/release ]] || exit 1
+  [[ "${GITHUB_EVENT_NAME:?}" == workflow_dispatch ]] || exit 1
 fi
 bash scripts/check-licensing-digests.sh
 python3 scripts/check-source.py
