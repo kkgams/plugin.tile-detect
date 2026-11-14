@@ -141,7 +141,7 @@
           });
         in {
           default = pkgs.mkShell {
-            packages = [ odin wasm-tools wit-bindgen wasi-sdk pkgs.go_1_25 pkgs.tinygo pkgs.nodejs_24 pkgs.gnumake pkgs.coreutils pkgs.python3 pkgs.bash ];
+            packages = [ wasm-tools pkgs.go_1_25 pkgs.tinygo pkgs.nodejs_24 pkgs.gnumake pkgs.coreutils pkgs.python3 pkgs.bash pkgs.zip pkgs.unzip pkgs.curl ];
             shellHook = ''
               export WASI_SDK_PATH="${wasi-sdk}"
               export WASI_SYSROOT="$WASI_SDK_PATH/share/wasi-sysroot"
