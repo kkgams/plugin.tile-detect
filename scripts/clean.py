@@ -30,7 +30,14 @@ ui = config["ui"]
 sources = [*config["plugins"], ui["theme"]["url"]]
 for group in (ui["views"], ui["services"]):
     sources.extend(entry["url"] for entry in group.values())
-for source in sorted(set(sources)):
+urls = []
+for source in sources:
+    if isinstance(source, dict):
+        source = source["$file"]
+        if isinstance(source, dict):
+            source = source["url"]
+    urls.append(source)
+for source in sorted(set(urls)):
     url, _ = urldefrag(source)
     if urlsplit(url).scheme != "https":
         continue
