@@ -1,5 +1,5 @@
 name: Deploy documentation
-on:
+"on":
   push:
     branches: ['release']
   workflow_dispatch:

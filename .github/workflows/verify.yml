@@ -1,5 +1,5 @@
 name: Verify
-on:
+"on":
   push:
     branches: ['release']
   pull_request:
